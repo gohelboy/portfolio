@@ -32,6 +32,9 @@ const About = () => {
       id="about"
       className={`h-fit flex flex-col gap-3 items-center justify-center mx-[18px] py-[120px] ${judson.className}`}
     >
+      <h1 className="sr-only">
+        About Dwarkesh Gohel - Full Stack Developer and Designer
+      </h1>
       <motion.div className="w-full md:max-w-[1140px] 2xl:max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7">
         <motion.div
           key={greetings[greetingIndex]}
@@ -100,12 +103,7 @@ const About = () => {
               whileTap={{ scale: 0.9 }}
               className="cursor-pointer"
             >
-              <Image
-                src={"/indiadots.svg"}
-                width={56}
-                height={56}
-                alt="india"
-              />
+              <img src={"/indiadots.svg"} width={56} height={56} alt="india" />
               <span className={`${mate_sc.className} text-lg`}>India</span>
             </motion.div>
           </div>
@@ -170,7 +168,7 @@ const About = () => {
               whileTap={{ scale: 0.9 }}
               className="cursor-pointer"
             >
-              <Image src={"/gujarat.svg"} width={56} height={56} alt="india" />
+              <img src={"/gujarat.svg"} width={56} height={56} alt="india" />
             </motion.div>
           </div>
         </div>

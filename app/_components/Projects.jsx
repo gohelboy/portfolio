@@ -133,9 +133,9 @@ const Projects = () => {
       className="mx-[18px] flex items-center justify-center py-[100px]"
     >
       <div className="w-full md:max-w-[1140px] 2xl:max-w-[1280px] flex flex-col gap-9">
-        <div className="text-5xl md:text-6xl 2xl:text-7xl text-center">
+        <h2 className="text-5xl md:text-6xl 2xl:text-7xl text-center">
           Projects
-        </div>
+        </h2>
         {Projects?.map((project, i) => {
           return (
             <motion.div

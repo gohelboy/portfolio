@@ -38,7 +38,7 @@ const LandingPage = () => {
       ref={containerRef}
     >
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden w-[400px] md:w-[40%] 2xl:w-auto 2xl:h-auto">
-        <Image
+        <img
           src={"/bgring.svg"}
           alt="bg"
           width={700}
@@ -47,10 +47,10 @@ const LandingPage = () => {
         />
       </div>
       <div className="absolute top-[70px] right-0 opacity-10 animate-cloudmoveleft w-[150px] md:w-auto">
-        <Image src={"/cloud1.svg"} alt="cloud" width={200} height={200} />
+        <img src={"/cloud1.svg"} alt="cloud" width={200} height={200} />
       </div>
       <div className="absolute top-[300px] left-0 animate-cloudmoveright opacity-10 w-[100px] md:w-auto">
-        <Image src={"/cloud1.svg"} alt="cloud" width={150} height={150} />
+        <img src={"/cloud1.svg"} alt="cloud" width={150} height={150} />
       </div>
       <motion.div
         style={{
@@ -61,7 +61,7 @@ const LandingPage = () => {
         }}
         className={"absolute top-0 left-0 w-[100px] md:w-auto"}
       >
-        <Image src={"/cloud1.svg"} alt="cloud" width={100} height={100} />
+        <img src={"/cloud1.svg"} alt="cloud" width={100} height={100} />
       </motion.div>
 
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-[60%] md:translate-y-[225%] 2xl:translate-y-[250%]">
@@ -71,7 +71,7 @@ const LandingPage = () => {
           transition={{ delay: 0 }}
           className="absolute top-[-24px] md:-top-20 right-0 select-none z-[-1]"
         >
-          <Image src={"/blob.svg"} alt="blob" width={200} height={200} />
+          <img src={"/blob.svg"} alt="blob" width={200} height={200} />
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
@@ -90,7 +90,7 @@ const LandingPage = () => {
         >
           On{" "}
         </motion.div>
-        <motion.div
+        <motion.h1
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1 }}
@@ -98,7 +98,7 @@ const LandingPage = () => {
         >
           <span className="hidden md:block text-nowrap">Creative Mode</span>
           <span className="md:hidden">Creative Mode</span>
-        </motion.div>
+        </motion.h1>
       </div>
       <div className="h-fit bottom-0 flex flex-col items-center">
         <motion.div
