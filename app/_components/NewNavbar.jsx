@@ -2,6 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsLeft, FileDown } from "lucide-react";
 import { Mate_SC } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { cn, downloadResume } from "../_utils/helper";
@@ -77,7 +78,7 @@ const NewNavbar = () => {
 
   return (
     <nav
-      className={`${mate_sc.className} px-4 md:px-0 fixed top-7 left-1/2 transform -translate-x-1/2  ${isMenuOpen ? "w-full" : "w-fit"} z-[10] flex items-center justify-center backdrop-blur-sm`}
+      className={`${mate_sc.className} px-4 md:px-0 fixed top-7 left-1/2 transform -translate-x-1/2  w-full z-[10] flex items-center justify-center backdrop-blur-sm`}
     >
       <AnimatePresence mode="wait">
         {isMenuOpen && (
@@ -239,7 +240,7 @@ const NewNavbar = () => {
               transition={{ duration: 1, type: "spring" }}
               className="absolute bottom-[-50px] right-[-50px] z-[-1] overflow-hidden animate-spin1"
             >
-              <img
+              <Image
                 src={"/globe.svg"}
                 width={300}
                 height={300}
