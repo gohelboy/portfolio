@@ -2,7 +2,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsLeft, FileDown } from "lucide-react";
 import { Mate_SC } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { cn, downloadResume } from "../_utils/helper";
@@ -240,7 +239,7 @@ const NewNavbar = () => {
               transition={{ duration: 1, type: "spring" }}
               className="absolute bottom-[-50px] right-[-50px] z-[-1] overflow-hidden animate-spin1"
             >
-              <Image
+              <img
                 src={"/globe.svg"}
                 width={300}
                 height={300}

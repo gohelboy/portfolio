@@ -22,8 +22,37 @@ import {
   IconTailwind,
   IconTanstackQuery,
 } from "./icons";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Projects = () => {
+  // Helper function to get icon name
+  const getIconName = (Icon) => {
+    const iconNames = {
+      [IconTailwind]: "Tailwind CSS",
+      [IconReact]: "React",
+      [IconTanstackQuery]: "TanStack Query",
+      [IconNODE]: "Node.js",
+      [IconNextJS]: "Next.js",
+      [IconConvex]: "Convex",
+      [IconShadCN]: "shadcn/ui",
+      [IconRedux]: "Redux",
+      [IconHTML]: "HTML",
+      [IconSCSS]: "SCSS",
+      [IconBootstrap]: "Bootstrap",
+      [IconFirebase]: "Firebase",
+      [IconExpress]: "Express.js",
+      [IconSQL]: "SQL",
+      [IconCSS]: "CSS",
+      [IconMongo]: "MongoDB",
+    };
+    return iconNames[Icon] || "Technology";
+  };
+
   const Projects = [
     {
       logo: (
@@ -128,72 +157,83 @@ const Projects = () => {
   ];
 
   return (
-    <section
-      id="projects"
-      className="mx-[18px] flex items-center justify-center py-[100px]"
-    >
-      <div className="w-full md:max-w-[1140px] 2xl:max-w-[1280px] flex flex-col gap-9">
-        <h2 className="text-5xl md:text-6xl 2xl:text-7xl text-center">
-          Projects
-        </h2>
-        {Projects?.map((project, i) => {
-          return (
-            <motion.div
-              initial={{ opacity: 0, y: "20px" }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              key={i}
-              className={cn(
-                `group border border-[--border-color] w-full rounded-3xl p-1 md:p-3 bg-gradient-to-b from-[#0f0f0f] to-[--primary-bg] flex md:flex-row gap-3 md:gap-7`,
-                i % 2 === 0
-                  ? "flex-col md:flex-row-reverse"
-                  : "flex-col md:flex-row"
-              )}
-            >
-              <div className="bg-[#151515] w-full rounded-2xl flex items-center justify-center text-7xl p-1 md:p-2 border-[--border-color] relative cursor-pointer">
-                <div className="absolute bottom-0 left-0 opacity-0 transition-all group-hover:opacity-100 group-hover:bottom-3 group-hover:left-3 md:group-hover:bottom-6 md:group-hover:left-6">
-                  <IconLinkArrow
-                    className={"fill-[--secondary-bg] w-4 md:w-auto"}
-                  />
-                </div>
-                <Link href={project?.link ?? "#projects"} target="_blank">
-                  <div className="overflow-hidden rounded-xl group-hover:rounded-bl-[100px] md:group-hover:rounded-bl-[200px] transition-all duration-300 hover:scale-[0.97]">
-                    {project.image}
+    <TooltipProvider>
+      <section
+        id="projects"
+        className="mx-[18px] flex items-center justify-center py-[100px]"
+      >
+        <div className="w-full md:max-w-[1140px] 2xl:max-w-[1280px] flex flex-col gap-9">
+          <h2 className="text-5xl md:text-6xl 2xl:text-7xl text-center">
+            Projects
+          </h2>
+          {Projects?.map((project, i) => {
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: "20px" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                key={i}
+                className={cn(
+                  `group border border-[--border-color] w-full rounded-3xl p-1 md:p-3 bg-gradient-to-b from-[#0f0f0f] to-[--primary-bg] flex md:flex-row gap-3 md:gap-7`,
+                  i % 2 === 0
+                    ? "flex-col md:flex-row-reverse"
+                    : "flex-col md:flex-row"
+                )}
+              >
+                <div className="bg-[#151515] w-full rounded-2xl flex items-center justify-center text-7xl p-1 md:p-2 border-[--border-color] relative cursor-pointer">
+                  <div className="absolute bottom-0 left-0 opacity-0 transition-all group-hover:opacity-100 group-hover:bottom-3 group-hover:left-3 md:group-hover:bottom-6 md:group-hover:left-6">
+                    <IconLinkArrow
+                      className={"fill-[--secondary-bg] w-4 md:w-auto"}
+                    />
                   </div>
-                </Link>
-              </div>
-              <div className="w-full flex flex-col gap-4 md:gap-7 justify-between p-4">
-                <div
-                  className={cn("", i % 2 === 0 ? "self-start" : "md:self-end")}
-                >
-                  {" "}
-                  {project.logo}{" "}
+                  <Link href={project?.link ?? "#projects"} target="_blank">
+                    <div className="overflow-hidden rounded-xl group-hover:rounded-bl-[100px] md:group-hover:rounded-bl-[200px] transition-all duration-300 hover:scale-[0.97]">
+                      {project.image}
+                    </div>
+                  </Link>
                 </div>
-                <p className="md:text-lg">{project.description}</p>
-                <div
-                  className="gap-4 items-end grid"
-                  style={{
-                    gridTemplateColumns: "repeat(auto-fill, minmax(40px,1fr))",
-                  }}
-                >
-                  {project.icons.map((Icon, j) => (
-                    <motion.div
-                      key={j}
-                      initial={{ opacity: 0, y: "20px" }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 * j }}
-                    >
-                      <Icon className={"size-10"} />
-                    </motion.div>
-                  ))}
+                <div className="w-full flex flex-col gap-4 md:gap-7 justify-between p-4">
+                  <div
+                    className={cn("", i % 2 === 0 ? "self-start" : "md:self-end")}
+                  >
+                    {" "}
+                    {project.logo}{" "}
+                  </div>
+                  <p className="md:text-lg">{project.description}</p>
+                  <div
+                    className="gap-4 items-end grid"
+                    style={{
+                      gridTemplateColumns: "repeat(auto-fill, minmax(40px,1fr))",
+                    }}
+                  >
+                    {project.icons.map((Icon, j) => (
+                      <motion.div
+                        key={j}
+                        initial={{ opacity: 0, y: "20px" }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 * j }}
+                      >
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <div className="cursor-pointer">
+                              <Icon className={"size-10"} />
+                            </div>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>{getIconName(Icon)}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
-    </section>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+    </TooltipProvider>
   );
 };
 
