@@ -155,7 +155,7 @@ const About = () => {
               <div className="text-lg mt-3 flex flex-col items-end">
                 <div>BCA ~ Bachelor of Computer Science</div>
                 <div className="flex items-center gap-1 text-base">
-                  BKMNU
+                  BKNMU
                   <svg width="6" height="6" fill="#ffffffaa">
                     <ellipse cx="3" cy="3" rx="3" ry="3"></ellipse>
                   </svg>
