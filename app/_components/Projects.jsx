@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { cn } from "../_utils/helper";
 import {
+  IconAWS,
   IconBootstrap,
   IconConvex,
   IconCSS,
@@ -17,6 +18,7 @@ import {
   IconReact,
   IconRedux,
   IconSCSS,
+  IconSecov,
   IconShadCN,
   IconSQL,
   IconTailwind,
@@ -49,11 +51,34 @@ const Projects = () => {
       [IconSQL]: "SQL",
       [IconCSS]: "CSS",
       [IconMongo]: "MongoDB",
+      [IconAWS]: "AWS",
     };
     return iconNames[Icon] || "Technology";
   };
 
   const Projects = [
+    {
+      logo: (
+        <IconSecov className={"w-[180px] h-auto text-[--secondary-bg]"} />
+      ),
+      description:
+        "Secov is a security and compliance platform that helps companies stay audit-ready for SOC 2, ISO 27001, and ISO 42001. It connects cloud and workplace tools, runs automated control tests, and keeps policies, people, vendors, risks, and auditor evidence in one place.",
+      icons: [
+        IconNextJS,
+        IconReact,
+        IconTailwind,
+        IconTanstackQuery,
+        IconNODE,
+        IconExpress,
+        IconSQL,
+        IconAWS,
+      ],
+      image: (
+        <img src={"/secov.png"} width={700} height={700} alt="Secov" />
+      ),
+      link: "https://secov.com/",
+    },
+    
     {
       logo: (
         <img src={"/klimates.svg"} width={150} height={150} alt="Klimates" />

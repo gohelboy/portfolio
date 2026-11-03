@@ -4,6 +4,7 @@ import {
   IconBeingepedia,
   IconInside,
   IconKlimates,
+  IconSecov,
   IconPN,
   IconPW,
   IconTSP,
@@ -15,6 +16,7 @@ const ICON_CLASS_PW =
   "text-[--secondary-bg] size-32 h-[100px] md:w-[150px] 2xl:w-[150px] opacity-80 hover:opacity-100 hover:-translate-y-1 transition-all";
 
 const WORKED_ICONS = [
+  { name: "Secov", Icon: IconSecov },
   { name: "Part Note", Icon: IconPN },
   { name: "Inside", Icon: IconInside },
   { name: "Property Watch", Icon: IconPW, iconClass: ICON_CLASS_PW },
